@@ -1,0 +1,119 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Logout_Hallandale" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="536,850" sap2010:WorkflowViewState.IdRef="Logout_Hallandale_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Logout_Hallandale" sap:VirtualizedContainerService.HintSize="546,785" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,143" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Logout to Hallandale is Started&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Hallandale Pharmacy | LIFE FILE" sap:VirtualizedContainerService.HintSize="484,491" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="ac46eaed-cae9-4669-bd00-7e21ec084827" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,273" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Logout" sap:VirtualizedContainerService.HintSize="388,158" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ac46eaed-cae9-4669-bd00-7e21ec084827" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://host6.lifefile.net:40443/application_main_zfw/poeerx/poenewrxinfo" DesignTimeRectangle="164, 691, 92, 88" DesignTimeScaleFactor="2" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl tableRow='1' tag='TABLE' /&gt;&lt;webctrl aaname='Logout' tableRow='1' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Logout' type='' tag='IMG' class='' /&gt;" Guid="429b174e-6e2d-496e-945e-e48e0d222923" InformativeScreenshot="cad47b238eb072fb44dd04366370f584.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Hallandale Pharmacy | LIFE FILE' /&gt;" SearchSteps="Selector" Version="V2" WaitForReadyArgument="Complete">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="256, 691, 92, 88" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl tableRow='1' tag='TABLE' /&gt;&lt;webctrl aaname=' ' idx='2' tableRow='1' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname=' ' class='' type='' tag='IMG' /&gt;" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-13, -13, 2586, 1546" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHYcAAB2HAY/l8WUAAAOSSURBVDhPLZP7TxNWFMf7pwAyCsgbFZ1Rf3HIGJNHeLZaGCQmuBB0YyvLYDgjiCLQAkIpwhCw8gzyBruJtAKVUigwkJfIK5kbxoCDIoJ8djH74d7ce+4933PO93yP5PO4TPziNLhEXsNLnsepS1qOfVOMc8Qd7EOy8b6gJjitA+fIAlxl93CPUuOmUHMyuYJDwWlInM8mciK2nMC0ZvxTmvniSjV2AT9xOi6XVE0v35UY+fr7KlzDMnGPzMNHpsFdoUEqU3M4Oh+J/WkF3sIovaDiaFwhEcpyynsWqOmZRtdppaR1FFWThdv1VpQlT/EIy0Mani8ACnGOKULyWVAiUnFwi88js7qf2q5h6rottPZN0/xkkibDJFXCpnk0RK6un6yHsziG3cBJfgCiRnIoMBG7qFwCL6uFwxhdg1N0DkzSbXqB3jxLR/88LcYZqrqtFDUOCAATSq0Bp5DrgjcBIP0qiZNJldT1rdA7PM/gxCv6LDMYR+cYGF9Ab12hZXCBav0EpW3DqBpM/PKbAb9YFdIIFRKHs5dxOp8hIi5htE4zPDHH2PQiM4uvGRyZ4rlpgO3tbfYB284+BXV60su6uJSvx01eKDjwT+a47CYG8zzPJyb58BH2/v+8Iw5bYvv3/S7La+tY55ZY3YSb97tRVgziKlos8QpP5UxCCb3mg5SXWXm9xl9v1lld28AmgLbFWnprY2xxhX8+7rK6vkdBk4GfK4fwiLqL5HBIEt4xuZ8IM1heYdvd51p2DhPzS/SN/EmHYYin5lHebG2yYXvHysY+Nyo6+PZuL24RogTHgHgcgrN5+Me4IO8lmyLl9yLq3++2scwuUtbQQGmNjsdPevlg22Z8eYN0bTf+VyrxVAgdeIam4HHxPmnFXfQY59kVzluChwOQt+JyUMKabY/1HWEXTL5ch6wakX5MHg7hmaIL567iFV3OkYjrtA6s0fp4lJ5ns3Q+W6Clb47Gvil0QgMVj0xo6g2klv7OUVnWJzG5KAoEQIDgILoUl/BbOAWlo203U9Y+hE4/woNOE5XtFkqazeQ8MJFTN4rfxTv4ChUeS9BiF5aLxOnLRHzkZXgm3MNFTKWPeDwiu0VB6xxlbS/QtI2RUW4kVKkT06riRLwW/6u1OIbexktRisQ3Ssnx+ApOJVfhm1CEh7yYcylNRGT0EJnRgbc8h/Op9QT80IhPrAYPMXQBP9YS+Ws79kEZ/AeY3MpZabtRyQAAAABJRU5ErkJggg==" InformativeScreenshot="dddc57832fdb0cf854e0c344e64bcd37.jpg" Selector="&lt;html app='chrome.exe' title='Hallandale Pharmacy | LIFE FILE' /&gt;" Title="Hallandale Pharmacy | LIFE FILE" Url="https://host6.lifefile.net:40443/application_main_zfw/poe/poemainframe" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

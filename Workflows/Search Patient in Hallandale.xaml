@@ -1,0 +1,682 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Search_Patient" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="FirstName" Type="InArgument(x:String)" />
+    <x:Property Name="LastName" Type="InArgument(x:String)" />
+    <x:Property Name="Address" Type="InArgument(x:String)" />
+    <x:Property Name="Zip" Type="InArgument(x:String)" />
+    <x:Property Name="City" Type="InArgument(x:String)" />
+    <x:Property Name="Email" Type="InArgument(x:String)" />
+    <x:Property Name="Phone" Type="InArgument(x:String)" />
+    <x:Property Name="State" Type="InArgument(x:String)" />
+    <x:Property Name="Gender" Type="InArgument(x:String)" />
+    <x:Property Name="WaitS" Type="InArgument(x:Int32)" />
+    <x:Property Name="Day" Type="InArgument(x:String)" />
+    <x:Property Name="Month" Type="InArgument(x:String)" />
+    <x:Property Name="Year" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>674,2465</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Search_Patient_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Search_Patient" sap:VirtualizedContainerService.HintSize="684,2400" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="ElementExist" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="622,143" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Search Patient Started&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Hallandale Pharmacy | LIFE FILE" sap:VirtualizedContainerService.HintSize="622,2106" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="e5c1de63-071b-46cc-bb0f-e100340887de" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="588,1888" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Recent Patients'" sap:VirtualizedContainerService.HintSize="526,158" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e5c1de63-071b-46cc-bb0f-e100340887de" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://host6.lifefile.net:40443/application_main_zfw/poe/poehome" CvTextArea="73, 1199, 184, 24" CvTextArgument="Recent Patients" CvType="Text" DesignTimeRectangle="15, 1186, 396, 52" DesignTimeScaleFactor="2" ElementType="Text" FriendlyName="'Recent Patients'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl tableRow='4' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='A' aaname='Recent Patients' colName='Recent Patients' innertext='Recent Patients' rowName='Recent Patients' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='A' class='bg_left_quick_menu_extra_clear' aaname='Recent Patients' check:innerText='Recent Patients' /&gt;" Guid="61b85137-ae6c-437b-999a-28fc0126add5" InformativeScreenshot="24a20f298e434c5d7577f50d5ce758e0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Hallandale Pharmacy | LIFE FILE' /&gt;" SearchSteps="Selector" Version="V2" WaitForReadyArgument="Complete">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CvTextArea="73, 1199, 184, 24" CvTextArgument="Recent Patients" CvType="Text" DesignTimeRectangle="73, 1199, 184, 24" ElementType="Text" FriendlyName="'Recent Patients'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <Sequence DisplayName="Search Patient" sap:VirtualizedContainerService.HintSize="526,83" sap2010:WorkflowViewState.IdRef="Sequence_20">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Search'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,219" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="e5c1de63-071b-46cc-bb0f-e100340887de" Text="[FirstName]" Version="V3">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="https://host6.lifefile.net:40443/application_main_zfw/poe/searchpatient" CvElementArea="429, 605, 309, 40" CvType="InputBox" DesignTimeRectangle="433, 609, 303, 34" DesignTimeScaleFactor="2" ElementType="InputBox" FriendlyName="'INPUT txt_search'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl tableRow='2' tag='TABLE' /&gt;&lt;webctrl id='txt_search' tableRow='1' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='txt_search' type='text' tag='INPUT' class='form-control input_fix_ie' aaname='Search' /&gt;" Guid="33ade213-8061-4547-9fb0-3888a8f3df7b" InformativeScreenshot="4f85a2abf47b79cfca2116d7db277683.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Hallandale Pharmacy | LIFE FILE' /&gt;" SearchSteps="Selector" Version="V2" WaitForReadyArgument="Complete">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target CvTextArea="431, 583, 74, 22" CvTextArgument="Search" CvType="Text" DesignTimeRectangle="433, 583, 70, 25" ElementType="Text" FriendlyName="'Search'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl tableRow='2' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='LABEL' class='optional' aaname='Search' check:innerText='Search' /&gt;" SearchSteps="FuzzySelector, CV" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+              </uix:NTypeInto>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Search'" sap:VirtualizedContainerService.HintSize="388,158" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e5c1de63-071b-46cc-bb0f-e100340887de" Version="V3">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://host6.lifefile.net:40443/application_main_zfw/poe/searchpatient" CvElementArea="757, 599, 106, 46" CvTextArea="773, 609, 74, 22" CvTextArgument="Search" CvType="Button" DesignTimeRectangle="760, 602, 102, 42" DesignTimeScaleFactor="2" ElementType="Text" FriendlyName="'Search'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl tableRow='2' tag='TABLE' /&gt;&lt;webctrl id='btn_search_button' tableRow='1' tag='A' innertext='Search' visibleinnertext='Search' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='btn_search_button' type='' tag='A' class='bg_black_button' aaname='Search' check:innerText='Search' /&gt;" Guid="b67afa37-2ba6-477b-aebc-757df354b48c" InformativeScreenshot="74514abcc5d114f4448c5b307736bf0f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Hallandale Pharmacy | LIFE FILE' /&gt;" SearchSteps="Selector" Version="V2" WaitForReadyArgument="Complete" />
+                </uix:NClick.Target>
+              </uix:NClick>
+            </Sequence>
+            <ui:UiElementExists DisplayName="Patient Exist" Exists="[ElementExist]" sap:VirtualizedContainerService.HintSize="526,107" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
+              <ui:UiElementExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="79085dc4-08f5-4097-94b6-e2fe381c540c" InformativeScreenshot="d78c8f68387f1a8f3211622a6531d1e9" Selector="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl id='tbl_found_patients' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='3' tag='A' aaname='Select' innertext='Select' visibleinnertext='Select' /&gt;" TimeoutMS="[WaitS]" WaitForReady="COMPLETE" />
+              </ui:UiElementExists.Target>
+            </ui:UiElementExists>
+            <If Condition="[ElementExist]" sap:VirtualizedContainerService.HintSize="526,525" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="492,171" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Sequence DisplayName="Click Patient" sap:VirtualizedContainerService.HintSize="450,83" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Select'" sap:VirtualizedContainerService.HintSize="388,158" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e5c1de63-071b-46cc-bb0f-e100340887de" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://host6.lifefile.net:40443/application_main_zfw/poe/searchpatient" CvElementArea="2367, 811, 100, 46" CvTextArea="2385, 821, 66, 24" CvTextArgument="Select" CvType="Button" DesignTimeRectangle="2371, 814, 93, 42" DesignTimeScaleFactor="2" ElementType="Text" FriendlyName="'Select'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl id='tbl_found_patients' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='3' tag='A' aaname='Select' innertext='Select' visibleinnertext='Select' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl id='tbl_found_patients' tag='TABLE' /&gt;&lt;webctrl type='' tag='A' class='bg_black_button' aaname='Select' check:innerText='Select' /&gt;" Guid="12166cbc-00e8-41f5-9c9c-740754408031" InformativeScreenshot="08b58d21e96521c56c6193556ba19556.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Hallandale Pharmacy | LIFE FILE' /&gt;" SearchSteps="Selector" Version="V2" WaitForReadyArgument="Complete" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Rx" sap:VirtualizedContainerService.HintSize="388,158" sap2010:WorkflowViewState.IdRef="NClick_8" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e5c1de63-071b-46cc-bb0f-e100340887de" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://host6.lifefile.net:40443/application_main_zfw/poe/poepatientactions" DesignTimeRectangle="543, 489, 182, 170" DesignTimeScaleFactor="2" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='main_page_content' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='main_page_content' tag='TABLE' /&gt;&lt;webctrl type='' tag='IMG' class='control_panel_img' aaname='eRx' /&gt;" Guid="fdd2fe65-e1b2-421b-832c-b1240e5b7887" InformativeScreenshot="2a22e0948d7ff0a374de165c1dbccaee.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Hallandale Pharmacy | LIFE FILE' /&gt;" SearchSteps="Selector" Version="V2" WaitForReadyArgument="Complete" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="388,91" sap2010:WorkflowViewState.IdRef="Delay_2" />
+                  </Sequence>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="492,171" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Sequence DisplayName="Create New Patient" sap:VirtualizedContainerService.HintSize="450,83" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'New Patient'" sap:VirtualizedContainerService.HintSize="526,158" sap2010:WorkflowViewState.IdRef="NClick_9" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e5c1de63-071b-46cc-bb0f-e100340887de" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://host6.lifefile.net:40443/application_main_zfw/poe/searchpatient" CvElementArea="1007, 579, 156, 46" CvTextArea="1025, 589, 124, 22" CvTextArgument="New Patient" CvType="Button" DesignTimeRectangle="1011, 582, 151, 42" DesignTimeScaleFactor="2" ElementType="Text" FriendlyName="'New Patient'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl tableRow='2' tag='TABLE' /&gt;&lt;webctrl aaname='New Patient' tableRow='1' tag='A' colName='                             New Patient                         ' innertext='New Patient' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='New Patient' type='' tag='A' class='bg_black_button' check:innerText='New Patient' /&gt;" Guid="8949eae6-4c31-454e-acb4-fcfd24cdebdd" InformativeScreenshot="e217a6abdad280603372d00a51f50895.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Hallandale Pharmacy | LIFE FILE' /&gt;" SearchSteps="Selector" Version="V2" WaitForReadyArgument="Complete" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into '*First Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="526,219" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="e5c1de63-071b-46cc-bb0f-e100340887de" Text="[FirstName]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://host6.lifefile.net:40443/application_main_zfw/poepatient/newpatient" DesignTimeRectangle="441, 639, 303, 34" DesignTimeScaleFactor="2" ElementType="InputBox" FriendlyName="'INPUT txt_patient_first…'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='txt_patient_first_name' tableRow='3' tag='INPUT' aaname='*First Name' rowName='*First Name  ' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tag='TABLE' /&gt;&lt;webctrl id='txt_patient_first_name' type='text' tag='INPUT' class='rounded_text input_fix_ie' aaname='*First Name' /&gt;" Guid="af02c659-a26d-460c-8c0c-0afe2dc713a4" InformativeScreenshot="a0e03a7b328b9c32da2c8ef99663edb8.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Hallandale Pharmacy | LIFE FILE' /&gt;" SearchSteps="Selector" Version="V2" WaitForReadyArgument="Complete">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                              <uix:Target DesignTimeRectangle="441, 608, 145, 31" ElementType="Text" FriendlyName="'*First Name'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='3' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tag='TABLE' /&gt;&lt;webctrl type='' tag='LABEL' class='required' aaname='*First Name' check:innerText='*First Name' /&gt;" SearchSteps="FuzzySelector" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into '*Last Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="526,219" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="e5c1de63-071b-46cc-bb0f-e100340887de" Text="[LastName]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://host6.lifefile.net:40443/application_main_zfw/poepatient/newpatient" DesignTimeRectangle="441, 639, 303, 34" DesignTimeScaleFactor="2" ElementType="InputBox" FriendlyName="'INPUT txt_patient_first…'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='txt_patient_last_name' tableRow='5' tag='INPUT' aaname='*Last Name' rowName='*Last Name  ' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tag='TABLE' /&gt;&lt;webctrl id='txt_patient_first_name' type='text' tag='INPUT' class='rounded_text input_fix_ie' aaname='*First Name' /&gt;" Guid="af02c659-a26d-460c-8c0c-0afe2dc713a4" InformativeScreenshot="a0e03a7b328b9c32da2c8ef99663edb8.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Hallandale Pharmacy | LIFE FILE' /&gt;" SearchSteps="Selector" Version="V2" WaitForReadyArgument="Complete">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="441, 608, 145, 31" ElementType="Text" FriendlyName="'*First Name'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='3' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tag='TABLE' /&gt;&lt;webctrl type='' tag='LABEL' class='required' aaname='*First Name' check:innerText='*First Name' /&gt;" SearchSteps="FuzzySelector" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Address" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="526,219" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="e5c1de63-071b-46cc-bb0f-e100340887de" Text="[Address]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://host6.lifefile.net:40443/application_main_zfw/poepatient/newpatient" DesignTimeRectangle="441, 639, 303, 34" DesignTimeScaleFactor="2" ElementType="InputBox" FriendlyName="'INPUT txt_patient_first…'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='txt_patient_address_1' tableRow='3' tag='INPUT' aaname='*Address' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tag='TABLE' /&gt;&lt;webctrl id='txt_patient_first_name' type='text' tag='INPUT' class='rounded_text input_fix_ie' aaname='*First Name' /&gt;" Guid="af02c659-a26d-460c-8c0c-0afe2dc713a4" InformativeScreenshot="a0e03a7b328b9c32da2c8ef99663edb8.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Hallandale Pharmacy | LIFE FILE' /&gt;" SearchSteps="Selector" Version="V2" WaitForReadyArgument="Complete">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="441, 608, 145, 31" ElementType="Text" FriendlyName="'*First Name'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='3' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tag='TABLE' /&gt;&lt;webctrl type='' tag='LABEL' class='required' aaname='*First Name' check:innerText='*First Name' /&gt;" SearchSteps="FuzzySelector" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Zip" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="526,219" sap2010:WorkflowViewState.IdRef="NTypeInto_7" ScopeIdentifier="e5c1de63-071b-46cc-bb0f-e100340887de" Text="[Zip]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://host6.lifefile.net:40443/application_main_zfw/poepatient/newpatient" DesignTimeRectangle="441, 639, 303, 34" DesignTimeScaleFactor="2" ElementType="InputBox" FriendlyName="'INPUT txt_patient_first…'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='txt_patient_zip' tableRow='3' tag='INPUT' aaname='*Zip' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tag='TABLE' /&gt;&lt;webctrl id='txt_patient_first_name' type='text' tag='INPUT' class='rounded_text input_fix_ie' aaname='*First Name' /&gt;" Guid="af02c659-a26d-460c-8c0c-0afe2dc713a4" InformativeScreenshot="a0e03a7b328b9c32da2c8ef99663edb8.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Hallandale Pharmacy | LIFE FILE' /&gt;" SearchSteps="Selector" Version="V2" WaitForReadyArgument="Complete">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="441, 608, 145, 31" ElementType="Text" FriendlyName="'*First Name'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='3' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tag='TABLE' /&gt;&lt;webctrl type='' tag='LABEL' class='required' aaname='*First Name' check:innerText='*First Name' /&gt;" SearchSteps="FuzzySelector" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Email" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="526,219" sap2010:WorkflowViewState.IdRef="NTypeInto_8" ScopeIdentifier="e5c1de63-071b-46cc-bb0f-e100340887de" Text="[Email]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://host6.lifefile.net:40443/application_main_zfw/poepatient/newpatient" DesignTimeRectangle="441, 639, 303, 34" DesignTimeScaleFactor="2" ElementType="InputBox" FriendlyName="'INPUT txt_patient_first…'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='txt_patient_email' tableRow='4' tag='INPUT' aaname='*Email' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tag='TABLE' /&gt;&lt;webctrl id='txt_patient_first_name' type='text' tag='INPUT' class='rounded_text input_fix_ie' aaname='*First Name' /&gt;" Guid="af02c659-a26d-460c-8c0c-0afe2dc713a4" InformativeScreenshot="a0e03a7b328b9c32da2c8ef99663edb8.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Hallandale Pharmacy | LIFE FILE' /&gt;" SearchSteps="Selector" Version="V2" WaitForReadyArgument="Complete">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="441, 608, 145, 31" ElementType="Text" FriendlyName="'*First Name'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='3' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tag='TABLE' /&gt;&lt;webctrl type='' tag='LABEL' class='required' aaname='*First Name' check:innerText='*First Name' /&gt;" SearchSteps="FuzzySelector" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="City" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="526,219" sap2010:WorkflowViewState.IdRef="NTypeInto_9" ScopeIdentifier="e5c1de63-071b-46cc-bb0f-e100340887de" Text="[City]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://host6.lifefile.net:40443/application_main_zfw/poepatient/newpatient" DesignTimeRectangle="441, 639, 303, 34" DesignTimeScaleFactor="2" ElementType="InputBox" FriendlyName="'INPUT txt_patient_first…'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='txt_patient_city' tableRow='5' tag='INPUT' aaname='*City' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tag='TABLE' /&gt;&lt;webctrl id='txt_patient_first_name' type='text' tag='INPUT' class='rounded_text input_fix_ie' aaname='*First Name' /&gt;" Guid="af02c659-a26d-460c-8c0c-0afe2dc713a4" InformativeScreenshot="a0e03a7b328b9c32da2c8ef99663edb8.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Hallandale Pharmacy | LIFE FILE' /&gt;" SearchSteps="Selector" Version="V2" WaitForReadyArgument="Complete">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="441, 608, 145, 31" ElementType="Text" FriendlyName="'*First Name'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='3' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tag='TABLE' /&gt;&lt;webctrl type='' tag='LABEL' class='required' aaname='*First Name' check:innerText='*First Name' /&gt;" SearchSteps="FuzzySelector" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Phone" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="526,219" sap2010:WorkflowViewState.IdRef="NTypeInto_10" ScopeIdentifier="e5c1de63-071b-46cc-bb0f-e100340887de" Text="[Phone]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://host6.lifefile.net:40443/application_main_zfw/poepatient/newpatient" DesignTimeRectangle="441, 639, 303, 34" DesignTimeScaleFactor="2" ElementType="InputBox" FriendlyName="'INPUT txt_patient_first…'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='txt_patient_phone' tableRow='5' tag='INPUT' aaname='*Phone (Digits Only)' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tag='TABLE' /&gt;&lt;webctrl id='txt_patient_first_name' type='text' tag='INPUT' class='rounded_text input_fix_ie' aaname='*First Name' /&gt;" Guid="af02c659-a26d-460c-8c0c-0afe2dc713a4" InformativeScreenshot="a0e03a7b328b9c32da2c8ef99663edb8.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Hallandale Pharmacy | LIFE FILE' /&gt;" SearchSteps="Selector" Version="V2" WaitForReadyArgument="Complete">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="441, 608, 145, 31" ElementType="Text" FriendlyName="'*First Name'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='3' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tag='TABLE' /&gt;&lt;webctrl type='' tag='LABEL' class='required' aaname='*First Name' check:innerText='*First Name' /&gt;" SearchSteps="FuzzySelector" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <Sequence DisplayName="DOB" sap:VirtualizedContainerService.HintSize="526,83" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NSelectItem DisplayName="Month" sap:VirtualizedContainerService.HintSize="388,158" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="[Month]" ScopeIdentifier="e5c1de63-071b-46cc-bb0f-e100340887de" Version="V3">
+                        <uix:NSelectItem.Items>
+                          <scg:List x:TypeArguments="x:String" Capacity="13">
+                            <x:String>--</x:String>
+                            <x:String>01</x:String>
+                            <x:String>02</x:String>
+                            <x:String>03</x:String>
+                            <x:String>04</x:String>
+                            <x:String>05</x:String>
+                            <x:String>06</x:String>
+                            <x:String>07</x:String>
+                            <x:String>08</x:String>
+                            <x:String>09</x:String>
+                            <x:String>10</x:String>
+                            <x:String>11</x:String>
+                            <x:String>12</x:String>
+                          </scg:List>
+                        </uix:NSelectItem.Items>
+                        <uix:NSelectItem.Target>
+                          <uix:TargetAnchorable BrowserURL="https://host6.lifefile.net:40443/application_main_zfw/poepatient/newpatient" DesignTimeRectangle="441, 888, 73, 33" DesignTimeScaleFactor="2" ElementType="DropDown" FriendlyName="'--'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='txt_patient_date_of_birth-month' tableRow='6' tag='SELECT' innertext='     --     01     02     03     04     05     06     07     08     09     10     11     12 ' visibleinnertext='--&amp;#xA;01&amp;#xA;02&amp;#xA;03&amp;#xA;04&amp;#xA;05&amp;#xA;06&amp;#xA;07&amp;#xA;08&amp;#xA;09&amp;#xA;10&amp;#xA;11&amp;#xA;12' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tag='TABLE' /&gt;&lt;webctrl id='txt_patient_date_of_birth-month' type='' tag='SELECT' class='' aaname='' /&gt;" Guid="41d82e44-5adc-4957-a3b7-e901f13a89cc" InformativeScreenshot="53b21f50826ae4f6bcf9410889db81de.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Hallandale Pharmacy | LIFE FILE' /&gt;" SearchSteps="Selector" Version="V2" WaitForReadyArgument="Complete">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                <uix:Target DesignTimeRectangle="441, 857, 167, 31" ElementType="Text" FriendlyName="'*Date of Birth'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='6' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tag='TABLE' /&gt;&lt;webctrl type='' tag='LABEL' class='required' aaname='*Date of Birth' check:innerText='*Date of Birth' /&gt;" SearchSteps="FuzzySelector" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NSelectItem.Target>
+                      </uix:NSelectItem>
+                      <uix:NSelectItem DisplayName="Day" sap:VirtualizedContainerService.HintSize="388,158" sap2010:WorkflowViewState.IdRef="NSelectItem_2" Item="[Day]" ScopeIdentifier="e5c1de63-071b-46cc-bb0f-e100340887de" Version="V3">
+                        <uix:NSelectItem.Items>
+                          <scg:List x:TypeArguments="x:String" Capacity="32">
+                            <x:String>--</x:String>
+                            <x:String>01</x:String>
+                            <x:String>02</x:String>
+                            <x:String>03</x:String>
+                            <x:String>04</x:String>
+                            <x:String>05</x:String>
+                            <x:String>06</x:String>
+                            <x:String>07</x:String>
+                            <x:String>08</x:String>
+                            <x:String>09</x:String>
+                            <x:String>10</x:String>
+                            <x:String>11</x:String>
+                            <x:String>12</x:String>
+                            <x:String>13</x:String>
+                            <x:String>14</x:String>
+                            <x:String>15</x:String>
+                            <x:String>16</x:String>
+                            <x:String>17</x:String>
+                            <x:String>18</x:String>
+                            <x:String>19</x:String>
+                            <x:String>20</x:String>
+                            <x:String>21</x:String>
+                            <x:String>22</x:String>
+                            <x:String>23</x:String>
+                            <x:String>24</x:String>
+                            <x:String>25</x:String>
+                            <x:String>26</x:String>
+                            <x:String>27</x:String>
+                            <x:String>28</x:String>
+                            <x:String>29</x:String>
+                            <x:String>30</x:String>
+                            <x:String>31</x:String>
+                          </scg:List>
+                        </uix:NSelectItem.Items>
+                        <uix:NSelectItem.Target>
+                          <uix:TargetAnchorable BrowserURL="https://host6.lifefile.net:40443/application_main_zfw/poepatient/newpatient" DesignTimeRectangle="514, 888, 73, 33" DesignTimeScaleFactor="2" ElementType="DropDown" FriendlyName="'--'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='txt_patient_date_of_birth-day' tableRow='6' tag='SELECT' innertext='     --     01     02     03     04     05     06     07     08     09     10     11     12     13     14     15     16     17     18     19     20     21     22     23     24     25     26     27     28     29     30     31 ' visibleinnertext='--&amp;#xA;01&amp;#xA;02&amp;#xA;03&amp;#xA;04&amp;#xA;05&amp;#xA;06&amp;#xA;07&amp;#xA;08&amp;#xA;09&amp;#xA;10&amp;#xA;11&amp;#xA;12&amp;#xA;13&amp;#xA;14&amp;#xA;15&amp;#xA;16&amp;#xA;17&amp;#xA;18&amp;#xA;19&amp;#xA;20&amp;#xA;21&amp;#xA;22&amp;#xA;23&amp;#xA;24&amp;#xA;25&amp;#xA;26&amp;#xA;27&amp;#xA;28&amp;#xA;29&amp;#xA;30&amp;#xA;31' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tag='TABLE' /&gt;&lt;webctrl id='txt_patient_date_of_birth-day' type='' tag='SELECT' class='' aaname='' /&gt;" Guid="92d4a0bc-0a9e-492a-be5b-cae0799b8e68" InformativeScreenshot="93c443ebfa7cf7566f0b87ec146aa2f4.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Hallandale Pharmacy | LIFE FILE' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                <uix:Target DesignTimeRectangle="441, 857, 167, 31" ElementType="Text" FriendlyName="'*Date of Birth'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='6' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tag='TABLE' /&gt;&lt;webctrl type='' tag='LABEL' class='required' aaname='*Date of Birth' check:innerText='*Date of Birth' /&gt;" SearchSteps="FuzzySelector" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NSelectItem.Target>
+                      </uix:NSelectItem>
+                      <uix:NSelectItem DisplayName="Year" sap:VirtualizedContainerService.HintSize="388,158" sap2010:WorkflowViewState.IdRef="NSelectItem_3" Item="[Year]" ScopeIdentifier="e5c1de63-071b-46cc-bb0f-e100340887de" Version="V3">
+                        <uix:NSelectItem.Items>
+                          <scg:List x:TypeArguments="x:String" Capacity="50">
+                            <x:String>----</x:String>
+                            <x:String>1924</x:String>
+                            <x:String>1925</x:String>
+                            <x:String>1926</x:String>
+                            <x:String>1927</x:String>
+                            <x:String>1928</x:String>
+                            <x:String>1929</x:String>
+                            <x:String>1930</x:String>
+                            <x:String>1931</x:String>
+                            <x:String>1932</x:String>
+                            <x:String>1933</x:String>
+                            <x:String>1934</x:String>
+                            <x:String>1935</x:String>
+                            <x:String>1936</x:String>
+                            <x:String>1937</x:String>
+                            <x:String>1938</x:String>
+                            <x:String>1939</x:String>
+                            <x:String>1940</x:String>
+                            <x:String>1941</x:String>
+                            <x:String>1942</x:String>
+                            <x:String>1943</x:String>
+                            <x:String>1944</x:String>
+                            <x:String>1945</x:String>
+                            <x:String>1946</x:String>
+                            <x:String>1947</x:String>
+                            <x:String>1948</x:String>
+                            <x:String>1949</x:String>
+                            <x:String>1950</x:String>
+                            <x:String>1951</x:String>
+                            <x:String>1952</x:String>
+                            <x:String>1953</x:String>
+                            <x:String>1954</x:String>
+                            <x:String>1955</x:String>
+                            <x:String>1956</x:String>
+                            <x:String>1957</x:String>
+                            <x:String>1958</x:String>
+                            <x:String>1959</x:String>
+                            <x:String>1960</x:String>
+                            <x:String>1961</x:String>
+                            <x:String>1962</x:String>
+                            <x:String>1963</x:String>
+                            <x:String>1964</x:String>
+                            <x:String>1965</x:String>
+                            <x:String>1966</x:String>
+                            <x:String>1967</x:String>
+                            <x:String>1968</x:String>
+                            <x:String>1969</x:String>
+                            <x:String>1970</x:String>
+                            <x:String>1971</x:String>
+                            <x:String>1972</x:String>
+                          </scg:List>
+                        </uix:NSelectItem.Items>
+                        <uix:NSelectItem.Target>
+                          <uix:TargetAnchorable BrowserURL="https://host6.lifefile.net:40443/application_main_zfw/poepatient/newpatient" DesignTimeRectangle="587, 888, 97, 33" DesignTimeScaleFactor="2" ElementType="DropDown" FriendlyName="'----'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='txt_patient_date_of_birth-year' tableRow='6' tag='SELECT' innertext='     ----     1924     1925     1926     1927     1928     1929     1930     1931     1932     1933     1934     1935     1936     1937     1938     1939     1940     1941     1942     1943     1944     1945     1946     1947     1948     1949     1950     1951     1952     1953     1954     1955     1956     1957     1958     1959     1960     1961     1962     1963     1964     1965     1966     1967     1968     1969     1970     1971     1972     1973     1974     1975     1976     1977     1978     197*' visibleinnertext='----&amp;#xA;1924&amp;#xA;1925&amp;#xA;1926&amp;#xA;1927&amp;#xA;1928&amp;#xA;1929&amp;#xA;1930&amp;#xA;1931&amp;#xA;1932&amp;#xA;1933&amp;#xA;1934&amp;#xA;1935&amp;#xA;1936&amp;#xA;1937&amp;#xA;1938&amp;#xA;1939&amp;#xA;1940&amp;#xA;1941&amp;#xA;1942&amp;#xA;1943&amp;#xA;1944&amp;#xA;1945&amp;#xA;1946&amp;#xA;1947&amp;#xA;1948&amp;#xA;1949&amp;#xA;1950&amp;#xA;1951&amp;#xA;1952&amp;#xA;1953&amp;#xA;1954&amp;#xA;1955&amp;#xA;1956&amp;#xA;1957&amp;#xA;1958&amp;#xA;1959&amp;#xA;1960&amp;#xA;1961&amp;#xA;1962&amp;#xA;1963&amp;#xA;1964&amp;#xA;1965&amp;#xA;1966&amp;#xA;1967&amp;#xA;1968&amp;#xA;1969&amp;#xA;1970&amp;#xA;1971&amp;#xA;1972&amp;#xA;1973&amp;#xA;1974&amp;#xA;1975&amp;#xA;1976&amp;#xA;1977&amp;#xA;1978&amp;#xA;1979&amp;#xA;1980&amp;#xA;1981&amp;#xA;1982&amp;#xA;1983&amp;#xA;1984&amp;#xA;1985&amp;#xA;1986&amp;#xA;1987&amp;#xA;1988&amp;#xA;1989&amp;#xA;1990&amp;#xA;1991&amp;#xA;1992&amp;#xA;1993&amp;#xA;1994&amp;#xA;1995&amp;#xA;1996&amp;#xA;1997&amp;#xA;1998&amp;#xA;1999&amp;#xA;2000&amp;#xA;2001&amp;#xA;2002&amp;#xA;2003&amp;#xA;2004&amp;#xA;2005&amp;#xA;2006&amp;#xA;2007&amp;#xA;2008&amp;#xA;2009&amp;#xA;2010&amp;#xA;2011&amp;#xA;2012&amp;#xA;2013&amp;#xA;2014&amp;#xA;2015&amp;#xA;2016&amp;#xA;2017&amp;#xA;2018&amp;#xA;2019&amp;#xA;2020&amp;#xA;2021&amp;#xA;2022&amp;#xA;2023&amp;#xA;2024&amp;#xA;2025&amp;#xA;2026&amp;#xA;2027&amp;#xA;2028&amp;#xA;2029&amp;#xA;2030&amp;#xA;2031&amp;#xA;2032&amp;#xA;2033&amp;#xA;2034' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tag='TABLE' /&gt;&lt;webctrl id='txt_patient_date_of_birth-year' type='' tag='SELECT' class='' aaname='' /&gt;" Guid="3578b74c-8b69-4598-b67e-ee06678bf01d" InformativeScreenshot="17e695f3b6069b00daa4d0610129bbbc.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Hallandale Pharmacy | LIFE FILE' /&gt;" SearchSteps="Selector" Version="V2" WaitForReadyArgument="Complete">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                <uix:Target DesignTimeRectangle="441, 857, 167, 31" ElementType="Text" FriendlyName="'*Date of Birth'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='6' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tag='TABLE' /&gt;&lt;webctrl type='' tag='LABEL' class='required' aaname='*Date of Birth' check:innerText='*Date of Birth' /&gt;" SearchSteps="FuzzySelector" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NSelectItem.Target>
+                      </uix:NSelectItem>
+                    </Sequence>
+                    <uix:NSelectItem DisplayName="Select Item '*State'" sap:VirtualizedContainerService.HintSize="526,158" sap2010:WorkflowViewState.IdRef="NSelectItem_4" Item="[State]" ScopeIdentifier="e5c1de63-071b-46cc-bb0f-e100340887de" Version="V3">
+                      <uix:NSelectItem.Items>
+                        <scg:List x:TypeArguments="x:String" Capacity="50">
+                          <x:String>--CHOOSE ONE--</x:String>
+                          <x:String>AA</x:String>
+                          <x:String>AE</x:String>
+                          <x:String>ALABAMA</x:String>
+                          <x:String>ALASKA</x:String>
+                          <x:String>AMERICAN SAMOA</x:String>
+                          <x:String>AP</x:String>
+                          <x:String>ARIZONA</x:String>
+                          <x:String>ARKANSAS</x:String>
+                          <x:String>CALIFORNIA</x:String>
+                          <x:String>COLORADO</x:String>
+                          <x:String>CONNECTICUT</x:String>
+                          <x:String>DELAWARE</x:String>
+                          <x:String>DIST. OF COLUMBIA</x:String>
+                          <x:String>FLORIDA</x:String>
+                          <x:String>GEORGIA</x:String>
+                          <x:String>GUAM</x:String>
+                          <x:String>HAWAII</x:String>
+                          <x:String>IDAHO</x:String>
+                          <x:String>ILLINOIS</x:String>
+                          <x:String>INDIANA</x:String>
+                          <x:String>IOWA</x:String>
+                          <x:String>KANSAS</x:String>
+                          <x:String>KENTUCKY</x:String>
+                          <x:String>LOUISIANA</x:String>
+                          <x:String>MAINE</x:String>
+                          <x:String>MARYLAND</x:String>
+                          <x:String>MASSACHUSETTS</x:String>
+                          <x:String>MICHIGAN</x:String>
+                          <x:String>MINNESOTA</x:String>
+                          <x:String>MISSISSIPPI</x:String>
+                          <x:String>MISSOURI</x:String>
+                          <x:String>MONTANA</x:String>
+                          <x:String>NEBRASKA</x:String>
+                          <x:String>NEVADA</x:String>
+                          <x:String>NEW HAMPSHIRE</x:String>
+                          <x:String>NEW JERSEY</x:String>
+                          <x:String>NEW MEXICO</x:String>
+                          <x:String>NEW YORK</x:String>
+                          <x:String>NORTH CAROLINA</x:String>
+                          <x:String>NORTH DAKOTA</x:String>
+                          <x:String>NORTHERN MARIANA ISLANDS</x:String>
+                          <x:String>OHIO</x:String>
+                          <x:String>OKLAHOMA</x:String>
+                          <x:String>OREGON</x:String>
+                          <x:String>PENNSYLVANIA</x:String>
+                          <x:String>PUERTO RICO</x:String>
+                          <x:String>RHODE ISLAND</x:String>
+                          <x:String>SOUTH CAROLINA</x:String>
+                          <x:String>SOUTH DAKOTA</x:String>
+                        </scg:List>
+                      </uix:NSelectItem.Items>
+                      <uix:NSelectItem.Target>
+                        <uix:TargetAnchorable BrowserURL="https://host6.lifefile.net:40443/application_main_zfw/poepatient/newpatient" DesignTimeRectangle="1149, 900, 386, 33" DesignTimeScaleFactor="2" ElementType="DropDown" FriendlyName="'--CHOOSE ONE--'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='sel_patient_state' tableRow='6' tag='SELECT' innertext='      --CHOOSE ONE--     AA     AE     ALABAMA     ALASKA     AMERICAN SAMOA     AP     ARIZONA     ARKANSAS     CALIFORNIA     COLORADO     CONNECTICUT     DELAWARE     DIST. OF COLUMBIA     FLORIDA     GEORGIA     GUAM     HAWAII     IDAHO     ILLINOIS     INDIANA     IOWA     KANSAS     KENTUCKY     LOUISIANA     MAINE     MARYLAND     MASSACHUSETTS     MICHIGAN     MINNESOTA     MISSISSIPPI     MISSOURI     MONTANA     NEBRASKA     NEVADA     NEW HAMPSHIRE     NEW JERSEY     NEW MEXICO     NEW YORK     *' visibleinnertext='--CHOOSE ONE--&amp;#xA;AA&amp;#xA;AE&amp;#xA;ALABAMA&amp;#xA;ALASKA&amp;#xA;AMERICAN SAMOA&amp;#xA;AP&amp;#xA;ARIZONA&amp;#xA;ARKANSAS&amp;#xA;CALIFORNIA&amp;#xA;COLORADO&amp;#xA;CONNECTICUT&amp;#xA;DELAWARE&amp;#xA;DIST. OF COLUMBIA&amp;#xA;FLORIDA&amp;#xA;GEORGIA&amp;#xA;GUAM&amp;#xA;HAWAII&amp;#xA;IDAHO&amp;#xA;ILLINOIS&amp;#xA;INDIANA&amp;#xA;IOWA&amp;#xA;KANSAS&amp;#xA;KENTUCKY&amp;#xA;LOUISIANA&amp;#xA;MAINE&amp;#xA;MARYLAND&amp;#xA;MASSACHUSETTS&amp;#xA;MICHIGAN&amp;#xA;MINNESOTA&amp;#xA;MISSISSIPPI&amp;#xA;MISSOURI&amp;#xA;MONTANA&amp;#xA;NEBRASKA&amp;#xA;NEVADA&amp;#xA;NEW HAMPSHIRE&amp;#xA;NEW JERSEY&amp;#xA;NEW MEXICO&amp;#xA;NEW YORK&amp;#xA;NORTH CAROLINA&amp;#xA;NORTH DAKOTA&amp;#xA;NORTHERN MARIANA ISLANDS&amp;#xA;OHIO&amp;#xA;OKLAHOMA&amp;#xA;OREGON&amp;#xA;PENNSYLVANIA&amp;#xA;PUERTO RICO&amp;#xA;RHODE ISLAND&amp;#xA;SOUTH CAROLINA&amp;#xA;SOUTH DAKOTA&amp;#xA;TENNESSEE&amp;#xA;TEXAS&amp;#xA;US MINOR OUTLYING ISLANDS&amp;#xA;UTAH&amp;#xA;VERMONT&amp;#xA;VIRGIN ISLANDS&amp;#xA;VIRGINIA&amp;#xA;WASHINGTON&amp;#xA;WEST VIRGINIA&amp;#xA;WISCONSIN&amp;#xA;WYOMING&amp;#xA;[OTHER] - Outside US' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tag='TABLE' /&gt;&lt;webctrl id='sel_patient_state' type='' tag='SELECT' class='' aaname='*State' /&gt;" Guid="a73a20f0-8b66-477e-832c-8ba8e1f2b609" InformativeScreenshot="8f23fb0224ec66ff5420a49487252e6f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Hallandale Pharmacy | LIFE FILE' /&gt;" SearchSteps="Selector" Version="V2" WaitForReadyArgument="Complete">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                              <uix:Target DesignTimeRectangle="1149, 869, 77, 31" ElementType="Text" FriendlyName="'*State'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tableRow='1' tag='TABLE' /&gt;&lt;webctrl parentid='sel_patient_state-label' tableRow='6' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tag='TABLE' /&gt;&lt;webctrl parentid='sel_patient_state-label' type='' tag='LABEL' class='required' aaname='*State' check:innerText='*State' /&gt;" SearchSteps="FuzzySelector" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NSelectItem.Target>
+                    </uix:NSelectItem>
+                    <If Condition="[Gender.Contains(&quot;Woman&quot;) Or Gender.Contains(&quot;Girl&quot;) Or Gender.Contains(&quot;Female&quot;)]" DisplayName="Gender" sap:VirtualizedContainerService.HintSize="526,53" sap2010:WorkflowViewState.IdRef="If_4">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,246" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Select Female" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NClick_10" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e5c1de63-071b-46cc-bb0f-e100340887de" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="https://host6.lifefile.net:40443/application_main_zfw/poepatient/newpatient" DesignTimeRectangle="451, 1005, 26, 26" DesignTimeScaleFactor="2" ElementType="RadioButton" FriendlyName="'INPUT rad_patient_gende…'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='rad_patient_gender-f' tableRow='7' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tag='TABLE' /&gt;&lt;webctrl id='rad_patient_gender-f' type='radio' tag='INPUT' class='noborder' aaname='' /&gt;" Guid="ecb44f21-050c-4f53-b705-164c118f6905" InformativeScreenshot="be288507dfee25f36aa7242e76228739.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Hallandale Pharmacy | LIFE FILE' /&gt;" SearchSteps="Selector" Version="V2" WaitForReadyArgument="Complete">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                    <uix:Target DesignTimeRectangle="441, 993, 118, 50" ElementType="Text" FriendlyName="'unchecked'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tableRow='1' tag='TABLE' /&gt;&lt;webctrl parentid='rad_patient_gender-element' tableRow='7' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tag='TABLE' /&gt;&lt;webctrl parentid='rad_patient_gender-element' type='' tag='LABEL' class='' aaname='Female' check:innerText='Female' /&gt;" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,246" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'unchecked'" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NClick_11" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e5c1de63-071b-46cc-bb0f-e100340887de" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="https://host6.lifefile.net:40443/application_main_zfw/poepatient/newpatient" DesignTimeRectangle="589, 1005, 26, 26" DesignTimeScaleFactor="2" ElementType="RadioButton" FriendlyName="'INPUT rad_patient_gende…'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='rad_patient_gender-m' tableRow='7' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tag='TABLE' /&gt;&lt;webctrl id='rad_patient_gender-m' type='radio' tag='INPUT' class='noborder' aaname='' /&gt;" Guid="9c384f33-38fd-4fa6-bde6-003b5f8eedf0" InformativeScreenshot="0d31ebb2172da031ac9cfefaefbf0c9d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Hallandale Pharmacy | LIFE FILE' /&gt;" SearchSteps="Selector" Version="V2" WaitForReadyArgument="Complete">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                    <uix:Target DesignTimeRectangle="579, 993, 91, 50" ElementType="Text" FriendlyName="'unchecked'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tableRow='1' tag='TABLE' /&gt;&lt;webctrl aaname='Male' parentid='rad_patient_gender-element' tableRow='7' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tag='TABLE' /&gt;&lt;webctrl aaname='Male' parentid='rad_patient_gender-element' type='' tag='LABEL' class='' check:innerText='Male' /&gt;" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Save Patient'" sap:VirtualizedContainerService.HintSize="526,158" sap2010:WorkflowViewState.IdRef="NClick_12" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e5c1de63-071b-46cc-bb0f-e100340887de" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://host6.lifefile.net:40443/application_main_zfw/poepatient/newpatient" DesignTimeRectangle="2197, 1239, 326, 42" DesignTimeScaleFactor="2" ElementType="Text" FriendlyName="'Save Patient'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl idx='2' parentid='frm_new_patient_info' tableRow='1' tag='TABLE' /&gt;&lt;webctrl aaname='Save Patient' tableRow='1' tag='A' colName='                             Save Patient                         ' visibleinnertext='Save Patient' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='frm_new_patient_info' tag='TABLE' /&gt;&lt;webctrl aaname='Save Patient' type='' tag='A' class='bg_forward btn_insert_patient' check:innerText='Save Patient' /&gt;" Guid="84730a34-cbd0-4dc1-adba-b471a4e6b432" InformativeScreenshot="e72a7ce13d678ded7980d04933164b9f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Hallandale Pharmacy | LIFE FILE' /&gt;" SearchSteps="Selector" Version="V2" WaitForReadyArgument="Complete" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <ui:UiElementExists DisplayName="Patient Search" Exists="[ElementExist]" sap:VirtualizedContainerService.HintSize="526,107" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
+                      <ui:UiElementExists.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0f0f969f-2db7-4f4d-98d3-cdb0b30287db" InformativeScreenshot="e0e2d71d1bf723da453a038147fbf363" Selector="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl tableRow='2' tag='TABLE' /&gt;&lt;webctrl id='txt_search' tableRow='1' tag='INPUT' colName='                             Search                           ' rowName='                             Search                           ' /&gt;" TimeoutMS="[WaitS]" WaitForReady="COMPLETE" />
+                      </ui:UiElementExists.Target>
+                    </ui:UiElementExists>
+                    <If Condition="[ElementExist]" sap:VirtualizedContainerService.HintSize="526,841" sap2010:WorkflowViewState.IdRef="If_5">
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="492,479" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,145" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;New Paient created successfully&quot;]" />
+                          <Sequence DisplayName="Search Patient" sap:VirtualizedContainerService.HintSize="450,83" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Search'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,219" sap2010:WorkflowViewState.IdRef="NTypeInto_12" ScopeIdentifier="e5c1de63-071b-46cc-bb0f-e100340887de" Text="[FirstName]" Version="V3">
+                              <uix:NTypeInto.Target>
+                                <uix:TargetAnchorable BrowserURL="https://host6.lifefile.net:40443/application_main_zfw/poe/searchpatient" CvElementArea="429, 605, 309, 40" CvType="InputBox" DesignTimeRectangle="433, 609, 303, 34" DesignTimeScaleFactor="2" ElementType="InputBox" FriendlyName="'INPUT txt_search'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl tableRow='2' tag='TABLE' /&gt;&lt;webctrl id='txt_search' tableRow='1' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='txt_search' type='text' tag='INPUT' class='form-control input_fix_ie' aaname='Search' /&gt;" Guid="33ade213-8061-4547-9fb0-3888a8f3df7b" InformativeScreenshot="4f85a2abf47b79cfca2116d7db277683.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Hallandale Pharmacy | LIFE FILE' /&gt;" SearchSteps="Selector" Version="V2" WaitForReadyArgument="Complete">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target CvTextArea="431, 583, 74, 22" CvTextArgument="Search" CvType="Text" DesignTimeRectangle="433, 583, 70, 25" ElementType="Text" FriendlyName="'Search'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl tableRow='2' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='LABEL' class='optional' aaname='Search' check:innerText='Search' /&gt;" SearchSteps="FuzzySelector, CV" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NTypeInto.Target>
+                            </uix:NTypeInto>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Search'" sap:VirtualizedContainerService.HintSize="388,158" sap2010:WorkflowViewState.IdRef="NClick_13" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e5c1de63-071b-46cc-bb0f-e100340887de" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="https://host6.lifefile.net:40443/application_main_zfw/poe/searchpatient" CvElementArea="757, 599, 106, 46" CvTextArea="773, 609, 74, 22" CvTextArgument="Search" CvType="Button" DesignTimeRectangle="760, 602, 102, 42" DesignTimeScaleFactor="2" ElementType="Text" FriendlyName="'Search'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl tableRow='2' tag='TABLE' /&gt;&lt;webctrl id='btn_search_button' tableRow='1' tag='A' innertext='Search' visibleinnertext='Search' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='btn_search_button' type='' tag='A' class='bg_black_button' aaname='Search' check:innerText='Search' /&gt;" Guid="b67afa37-2ba6-477b-aebc-757df354b48c" InformativeScreenshot="74514abcc5d114f4448c5b307736bf0f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Hallandale Pharmacy | LIFE FILE' /&gt;" SearchSteps="Selector" Version="V2" WaitForReadyArgument="Complete" />
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                          </Sequence>
+                          <Sequence DisplayName="Click Patient" sap:VirtualizedContainerService.HintSize="450,83" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Select'" sap:VirtualizedContainerService.HintSize="388,158" sap2010:WorkflowViewState.IdRef="NClick_14" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e5c1de63-071b-46cc-bb0f-e100340887de" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="https://host6.lifefile.net:40443/application_main_zfw/poe/searchpatient" CvElementArea="2367, 811, 100, 46" CvTextArea="2385, 821, 66, 24" CvTextArgument="Select" CvType="Button" DesignTimeRectangle="2371, 814, 93, 42" DesignTimeScaleFactor="2" ElementType="Text" FriendlyName="'Select'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl id='tbl_found_patients' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='3' tag='A' aaname='Select' innertext='Select' visibleinnertext='Select' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl id='tbl_found_patients' tag='TABLE' /&gt;&lt;webctrl type='' tag='A' class='bg_black_button' aaname='Select' check:innerText='Select' /&gt;" Guid="12166cbc-00e8-41f5-9c9c-740754408031" InformativeScreenshot="08b58d21e96521c56c6193556ba19556.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Hallandale Pharmacy | LIFE FILE' /&gt;" SearchSteps="Selector" Version="V2" WaitForReadyArgument="Complete" />
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Rx" sap:VirtualizedContainerService.HintSize="388,158" sap2010:WorkflowViewState.IdRef="NClick_15" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e5c1de63-071b-46cc-bb0f-e100340887de" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="https://host6.lifefile.net:40443/application_main_zfw/poe/poepatientactions" DesignTimeRectangle="543, 489, 182, 170" DesignTimeScaleFactor="2" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='main_page_content' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='main_page_content' tag='TABLE' /&gt;&lt;webctrl type='' tag='IMG' class='control_panel_img' aaname='eRx' /&gt;" Guid="fdd2fe65-e1b2-421b-832c-b1240e5b7887" InformativeScreenshot="2a22e0948d7ff0a374de165c1dbccaee.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Hallandale Pharmacy | LIFE FILE' /&gt;" SearchSteps="Selector" Version="V2" WaitForReadyArgument="Complete" />
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                            <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="388,91" sap2010:WorkflowViewState.IdRef="Delay_3" />
+                          </Sequence>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,179" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Throw Exception="[New Exception(&quot;New Patient creation failed&quot;)]" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                </Sequence>
+              </If.Else>
+            </If>
+            <ui:UiElementExists DisplayName="Check eRx Order Information screen found" Exists="[ElementExist]" sap:VirtualizedContainerService.HintSize="526,107" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+              <ui:UiElementExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="cc4b521e-b35c-4de4-aaf8-dd1c840271d6" InformativeScreenshot="a5014f908e67740ed38eace9eeaf2a9a" Selector="&lt;webctrl id='main' tag='FRAME' /&gt;&lt;webctrl parentid='tab_order_information' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='sel_delivery_method' tableRow='4' tag='SELECT' aaname='Delivery Information' rowName='Delivery Information       ----     FEDEX-FLORIDA GROUND TO BUSINESS     FEDEX-FLORIDA GROUND RESIDENTIAL     Fedex - 2 Day     FEDEX-PRIORITY OVERNIGHT     FEDEX-STANDARD OVERNIGHT     Fedex OneRate - 2 Day     FEDEX-OUT OF STATE GROUND BUSINESS     FEDEX- OUT OF STATE GROUND RESIDENTIAL     Pharmacy pickup     Saturday Delivery     USPS - PO BOX ' visibleinnertext='----&amp;#xA;FEDEX-FLORIDA GROUND TO BUSINESS&amp;#xA;FEDEX-FLORIDA GROUND RESIDENTIAL&amp;#xA;Fedex - 2 Day&amp;#xA;FEDEX-PRIORITY OVERNIGHT&amp;#xA;FEDEX-STANDARD OVERNIGHT&amp;#xA;Fedex OneRate - 2 Day&amp;#xA;FEDEX-OUT OF STATE GROUND BUSINESS&amp;#xA;FEDEX- OUT OF STATE GROUND RESIDENTIAL&amp;#xA;Pharmacy pickup&amp;#xA;Saturday Delivery&amp;#xA;USPS - PO BOX' /&gt;" WaitForReady="COMPLETE">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                </ui:Target>
+              </ui:UiElementExists.Target>
+            </ui:UiElementExists>
+            <If Condition="[ElementExist]" sap:VirtualizedContainerService.HintSize="526,595" sap2010:WorkflowViewState.IdRef="If_3">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="376,233" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Search Patient completed&quot;]" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="376,179" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Throw Exception="[New Exception(&quot;Search Patient navigation failed&quot;)]" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-13, -13, 2586, 1546" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHYcAAB2HAY/l8WUAAAOSSURBVDhPLZP7TxNWFMf7pwAyCsgbFZ1Rf3HIGJNHeLZaGCQmuBB0YyvLYDgjiCLQAkIpwhCw8gzyBruJtAKVUigwkJfIK5kbxoCDIoJ8djH74d7ce+4933PO93yP5PO4TPziNLhEXsNLnsepS1qOfVOMc8Qd7EOy8b6gJjitA+fIAlxl93CPUuOmUHMyuYJDwWlInM8mciK2nMC0ZvxTmvniSjV2AT9xOi6XVE0v35UY+fr7KlzDMnGPzMNHpsFdoUEqU3M4Oh+J/WkF3sIovaDiaFwhEcpyynsWqOmZRtdppaR1FFWThdv1VpQlT/EIy0Mani8ACnGOKULyWVAiUnFwi88js7qf2q5h6rottPZN0/xkkibDJFXCpnk0RK6un6yHsziG3cBJfgCiRnIoMBG7qFwCL6uFwxhdg1N0DkzSbXqB3jxLR/88LcYZqrqtFDUOCAATSq0Bp5DrgjcBIP0qiZNJldT1rdA7PM/gxCv6LDMYR+cYGF9Ab12hZXCBav0EpW3DqBpM/PKbAb9YFdIIFRKHs5dxOp8hIi5htE4zPDHH2PQiM4uvGRyZ4rlpgO3tbfYB284+BXV60su6uJSvx01eKDjwT+a47CYG8zzPJyb58BH2/v+8Iw5bYvv3/S7La+tY55ZY3YSb97tRVgziKlos8QpP5UxCCb3mg5SXWXm9xl9v1lld28AmgLbFWnprY2xxhX8+7rK6vkdBk4GfK4fwiLqL5HBIEt4xuZ8IM1heYdvd51p2DhPzS/SN/EmHYYin5lHebG2yYXvHysY+Nyo6+PZuL24RogTHgHgcgrN5+Me4IO8lmyLl9yLq3++2scwuUtbQQGmNjsdPevlg22Z8eYN0bTf+VyrxVAgdeIam4HHxPmnFXfQY59kVzluChwOQt+JyUMKabY/1HWEXTL5ch6wakX5MHg7hmaIL567iFV3OkYjrtA6s0fp4lJ5ns3Q+W6Clb47Gvil0QgMVj0xo6g2klv7OUVnWJzG5KAoEQIDgILoUl/BbOAWlo203U9Y+hE4/woNOE5XtFkqazeQ8MJFTN4rfxTv4ChUeS9BiF5aLxOnLRHzkZXgm3MNFTKWPeDwiu0VB6xxlbS/QtI2RUW4kVKkT06riRLwW/6u1OIbexktRisQ3Ssnx+ApOJVfhm1CEh7yYcylNRGT0EJnRgbc8h/Op9QT80IhPrAYPMXQBP9YS+Ws79kEZ/AeY3MpZabtRyQAAAABJRU5ErkJggg==" InformativeScreenshot="d15262055f982ccf405c428729f3e63b.jpg" Selector="&lt;html app='chrome.exe' title='Hallandale Pharmacy | LIFE FILE' /&gt;" Title="Hallandale Pharmacy | LIFE FILE" Url="https://host6.lifefile.net:40443/application_main_zfw/poe/poemainframe" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

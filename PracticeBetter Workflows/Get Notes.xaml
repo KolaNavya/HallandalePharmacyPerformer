@@ -1,0 +1,200 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Get_Notes" this:Get_Notes.WaitL="10000" this:Get_Notes.WaitS="5000" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="WaitL" Type="InArgument(x:Int32)" />
+    <x:Property Name="WaitS" Type="InArgument(x:Int32)" />
+    <x:Property Name="MedicationDetails" Type="OutArgument(x:String)" />
+    <x:Property Name="DosingSchedule" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1327,2422</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Get_Notes_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Get_Notes" sap:VirtualizedContainerService.HintSize="568,2357" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="ElementExist" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="506,143" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Get Notes started&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Forms &amp; Waivers - Practice Better" sap:VirtualizedContainerService.HintSize="506,1880" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="7508b238-e2f3-49b7-ae7e-4dd4ec7be6c7" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="472,1662" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Notes'" sap:VirtualizedContainerService.HintSize="410,158" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7508b238-e2f3-49b7-ae7e-4dd4ec7be6c7" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://my.practicebetter.io/#/p/clients/653a50c6894e970bd2f5f3a2/forms/list" CvTextArea="667, 1183, 78, 26" CvTextArgument="Notes" CvType="Text" DesignTimeRectangle="602, 1173, 450, 48" DesignTimeScaleFactor="2" FriendlyName="'Notes'" FullSelectorArgument="&lt;html app='chrome.exe' title='*Practice Better' /&gt;&lt;webctrl parentid='btn-client-nav-notes' tag='DIV' innertext='Notes &amp;amp; Recordings' visibleinnertext='Notes &amp;amp; Recordings' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='anchor-notes-menu-diet-lifestyle' tag='DIV' type='' class='layout-align-start-center layout-row' aaname='   ' check:innerText='Notes' /&gt;" Guid="074abf38-1f30-4495-a1f8-74debed4fe08" InformativeScreenshot="5f9befa6308525c86f7971580ad5f8cd.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Forms &amp;amp; Waivers - Practice Better' /&gt;" SearchSteps="Selector" Version="V2" WaitForReadyArgument="Complete">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="667, 1183, 78, 26" CvTextArgument="Notes" CvType="Text" DesignTimeRectangle="670, 1179, 75, 36" FriendlyName="'Notes'" FullSelectorArgument="&lt;webctrl tag='FL-NOTES-SECTION-LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='FL-NOTES-SECTION-LABEL' type='' class='' aaname='Notes' check:innerText='Notes' /&gt;" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <ui:UiElementExists DisplayName="Element Exists 'DIV'" Exists="[ElementExist]" sap:VirtualizedContainerService.HintSize="410,107" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+              <ui:UiElementExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dc8092af-f722-4dc3-9cd9-b9b76dcfae00" InformativeScreenshot="dd56191f19d734d4f2bcaa1638d297de" Selector="&lt;webctrl parentid='__contentBody' tag='H2' innertext='Medication order ' visibleinnertext='Medication order' aaname='Medication order ' /&gt;" TimeoutMS="[WaitL]" WaitForReady="COMPLETE" />
+              </ui:UiElementExists.Target>
+            </ui:UiElementExists>
+            <If Condition="[ElementExist]" sap:VirtualizedContainerService.HintSize="410,1202" sap2010:WorkflowViewState.IdRef="If_2">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="376,840" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Medication Order" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7508b238-e2f3-49b7-ae7e-4dd4ec7be6c7" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://my.practicebetter.io/#/p/clients/653a50c6894e970bd2f5f3a2/notes/list?view=notes&amp;sort=date_desc" DesignTimeRectangle="1159, 727, 1340, 139" DesignTimeScaleFactor="2" FriendlyName="'Initial consultation'" FullSelectorArgument="&lt;webctrl parentid='__contentBody' tag='H2' aaname='Medication order ' innertext='Medication order ' visibleinnertext='Medication order' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='fl-list-item-text flex' parentid='__contentBody' tag='DIV' aaname='   ' check:innerText='Initial consultation*' /&gt;" Guid="716b9afc-85fe-41ba-ba94-be4726e613ef" InformativeScreenshot="1582d3c80a411a082cf11569c0c33f09.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*Practice Better' /&gt;" SearchSteps="Selector" Version="V2" WaitForReadyArgument="Complete">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CvTextArea="1189, 761, 254, 30" CvTextArgument="Initial consultation" CvType="Text" DesignTimeRectangle="1191, 759, 1119, 37" ElementType="Text" FriendlyName="'Initial consultation'" FullSelectorArgument="&lt;webctrl parentid='__contentBody' tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='__contentBody' tag='H2' type='' class='flex' aaname='Initial consultation ' check:innerText='Initial consultation' /&gt;" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NGetText DisplayName="Medication Details" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="7508b238-e2f3-49b7-ae7e-4dd4ec7be6c7" TextString="[MedicationDetails]" Version="V3">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="https://my.practicebetter.io/#/p/clients/653a50c6894e970bd2f5f3a2/notes/653c0891001d76df1bef2e3f/edit" CvElementArea="767, 1403, 1536, 361" CvTextArea="833, 1795, 374, 30" CvType="InputBox" DesignTimeRectangle="770, 1411, 1524, 2168" DesignTimeScaleFactor="2" FriendlyName="'HPI:Adam Welch'" FullSelectorArgument="&lt;html app='chrome.exe' title='*Practice Better' /&gt;&lt;webctrl tag='DIV' innertext='Medication*' visibleinnertext='Medication:*' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='fr-element fr-view fr-disabled' parentid='section_0' tag='DIV' aaname='' /&gt;" Guid="7e71e9a9-7eac-4e40-a627-7fb733037f6b" InformativeScreenshot="3b43a783cacc7b5eb7f6912b4affb359.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Edit Notes - Practice Better' /&gt;" SearchSteps="Selector" Version="V2" WaitForReadyArgument="Complete" />
+                    </uix:NGetText.Target>
+                  </uix:NGetText>
+                  <uix:NGetText DisplayName="Dosing Schedule" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="7508b238-e2f3-49b7-ae7e-4dd4ec7be6c7" TextString="[DosingSchedule]" Version="V3">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="https://my.practicebetter.io/#/p/clients/653be0059373ef46e27f1539/notes/65baa770087d82ebbfd21a16/edit" DesignTimeRectangle="514, 821, 1524, 456" DesignTimeScaleFactor="2" ElementType="InputBox" FriendlyName="'Dosing schedule: Week'" FullSelectorArgument="&lt;webctrl tag='DIV' innertext='Dosing schedule:*' visibleinnertext='Dosing schedule:*' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='fr-element fr-view' parentid='section_1' tag='DIV' aaname='' /&gt;" Guid="895efd08-c11b-4a4f-a253-1648505af048" InformativeScreenshot="d35e6d6c736a0ed47b3ca94a8fdec4a4.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*Practice Better' /&gt;" SearchSteps="Selector" Version="V2" WaitForReadyArgument="Complete" />
+                    </uix:NGetText.Target>
+                  </uix:NGetText>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Back" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7508b238-e2f3-49b7-ae7e-4dd4ec7be6c7" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://my.practicebetter.io/#/p/clients/653a50c6894e970bd2f5f3a2/notes/653c0891001d76df1bef2e3f/edit" DesignTimeRectangle="656, 415, 48, 48" DesignTimeScaleFactor="2" FriendlyName="'MD-ICON'" FullSelectorArgument="&lt;html app='chrome.exe' title='*Practice Better' /&gt;&lt;webctrl aria-label='app:arrow-back' aria-role='img' parentid='titlebar' tag='MD-ICON' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='app:arrow-back' aria-role='img' parentid='titlebar' tag='MD-ICON' type='' class='' aaname='' /&gt;" Guid="b7e256ed-4101-4607-8199-6b61df2292ed" InformativeScreenshot="528733a476ecb1de136943b65031816b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Edit Notes - Practice Better' /&gt;" SearchSteps="Selector" Version="V2" WaitForReadyArgument="Complete" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="376,179" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Throw Exception="[New BusinessRuleException(&quot;Medication Order not found&quot;)]" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-13, -13, 3098, 1866" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAE+SURBVFhHxdTNTcNAEIbhlOA7F0pANJCUQAFIsaggHUAJdACiAdIBdJCUQAfQwfKN5JU249fOYpvJ4Tn4086Md/2zSildFIaRMIyEYSQMI2F4+/awl/QPGj/r5CLTwtYVLuFAs3qB0eJGvoviJbQ0qxdkKti5BnPg7g2GmQrfXaMp7CRvqL/BMFOhPYqXrtEUo8MNhp6aPBZNa33INfUrYUismdScxkG21INgeI4GrMVOpbSVszv2MIyEYSQMa13drzedPx99huEQDWrkSY6SnB/Zy4Zqh2BI1Pi5G+IHE7vB0e8/w7CkRrZr2nEN/P+XMMzUYM7wbPQmMMxU/OmaTTX4XmBoVNS6JnN80QyDoVFR7QtXa0dzeoHR4jtXvIQjzeoFRotfXfFSej+sk4tLwDAShpEwjIRhJAzjpNUvZSCHiAFhY7UAAAAASUVORK5CYII=" InformativeScreenshot="9f76c50aaba07406617a35a6a00a12c3.jpg" Selector="&lt;html app='chrome.exe' title='*Practice Better' /&gt;" Title="Forms &amp; Waivers - Practice Better" Url="https://my.practicebetter.io/#/p/clients/*" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="506,143" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Get notes completed&quot;]" />
+  </Sequence>
+</Activity>
