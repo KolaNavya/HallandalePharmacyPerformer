@@ -1,5 +1,5 @@
 {
-  "name": "Hallandale Pharmacy_Create Priscription Order",
+  "name": "PriscriptionOrder_Dispatcher",
   "projectId": "772cbb72-6546-499e-a12f-00ae871f9418",
   "description": "Robotic Enterprise Framework",
   "main": "Main.xaml",
