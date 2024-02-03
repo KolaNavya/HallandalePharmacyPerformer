@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>808,4403</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1219,4732</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Search_Client_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -104,15 +104,15 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="818,4338" sap2010:WorkflowViewState.IdRef="Sequence_6">
+  <Sequence sap:VirtualizedContainerService.HintSize="818,4667" sap2010:WorkflowViewState.IdRef="Sequence_6">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="756,4227" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="756,4556" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="Search_Client" sap:VirtualizedContainerService.HintSize="718,3994" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence DisplayName="Search_Client" sap:VirtualizedContainerService.HintSize="718,4323" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="ElementExist" />
           </Sequence.Variables>
@@ -123,13 +123,13 @@
           </sap:WorkflowViewStateService.ViewState>
           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="656,143" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Search client started&quot;]" />
           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="656,143" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Searching Client:&quot;+ClientName]" />
-          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Home - Practice Better" sap:VirtualizedContainerService.HintSize="656,3334" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Never" ScopeGuid="ac8fef75-aaa9-4a54-ad7b-bdfc839ba6bb" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Home - Practice Better" sap:VirtualizedContainerService.HintSize="656,3663" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Never" ScopeGuid="ac8fef75-aaa9-4a54-ad7b-bdfc839ba6bb" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="622,3116" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="622,3445" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -179,6 +179,12 @@
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:CommentOut>
                   <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="560,91" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Home" sap:VirtualizedContainerService.HintSize="560,158" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ac8fef75-aaa9-4a54-ad7b-bdfc839ba6bb" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://my.practicebetter.io/#/p/clients/list?q=tag:Order" CvTextArea="111, 225, 336, 48" CvTextArgument="practice better" CvType="Text" DesignTimeRectangle="43, 226, 400, 52" DesignTimeScaleFactor="2" FriendlyName="'MD-ICON logo'" FullSelectorArgument="&lt;webctrl tag='A' aria-label='Logo (Home)' uipath-html-title='Home' /&gt;&lt;webctrl id='logo' tag='MD-ICON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='logo' tag='MD-ICON' type='' class='logo logo-default' aaname='' /&gt;" Guid="39827586-8def-4c63-9f23-4c2db49c3ff8" InformativeScreenshot="7296794c53535dc5c9fbee41df94a4cf.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*Practice Better' /&gt;" SearchSteps="Selector" Version="V2" WaitForReadyArgument="Complete" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="560,91" sap2010:WorkflowViewState.IdRef="Delay_2" />
                   <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'My Clients'" sap:VirtualizedContainerService.HintSize="560,158" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ac8fef75-aaa9-4a54-ad7b-bdfc839ba6bb" Version="V3">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://my.practicebetter.io/#/p/home" CvTextArea="245, 553, 138, 34" CvTextArgument="My Clients" CvType="Text" DesignTimeRectangle="247, 550, 292, 39" DesignTimeScaleFactor="2" ElementType="Text" FriendlyName="'My Clients'" FullSelectorArgument="&lt;webctrl aaname='My Clients' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='My Clients' tag='DIV' type='' class='title text-no-wrap' check:innerText='My Clients' /&gt;" Guid="ff2c4df2-4eb5-4f88-9557-4fec3c94f84b" InformativeScreenshot="72f0840173f28d50a7ff0ca0abb3f272.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Home - Practice Better' /&gt;" SearchSteps="Selector" Version="V2" WaitForReadyArgument="Complete">
