@@ -213,7 +213,6 @@
                   <InArgument x:TypeArguments="x:String" x:Key="Email">[CurrentRow(2).ToString]</InArgument>
                   <InArgument x:TypeArguments="x:String" x:Key="DOB">[CurrentRow(3).ToString]</InArgument>
                   <InArgument x:TypeArguments="x:String" x:Key="Gender">[CurrentRow(4).ToString]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="MedicationNotes">[CurrentRow(6).ToString]</InArgument>
                   <InArgument x:TypeArguments="x:String" x:Key="OrderDate">[CurrentRow(7).ToString]</InArgument>
                   <InArgument x:TypeArguments="x:String" x:Key="Address">[CurrentRow(8).ToString]</InArgument>
                   <InArgument x:TypeArguments="x:String" x:Key="City">[CurrentRow(9).ToString]</InArgument>
