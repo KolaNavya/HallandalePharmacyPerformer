@@ -183,7 +183,7 @@
                       <OutArgument x:TypeArguments="x:String">[MedicationDetails]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(MedicationDetails,"\n","")]</InArgument>
+                      <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(MedicationDetails,"\n"," ")]</InArgument>
                     </Assign.Value>
                   </Assign>
                   <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Back" sap:VirtualizedContainerService.HintSize="434,158" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7508b238-e2f3-49b7-ae7e-4dd4ec7be6c7" Version="V3">
