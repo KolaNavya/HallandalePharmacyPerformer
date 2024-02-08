@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1219,2422</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1515,2422</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Get_Notes_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -153,7 +153,7 @@
                     <uix:NGetText.Target>
                       <uix:TargetAnchorable BrowserURL="https://my.practicebetter.io/#/p/clients/653be0059373ef46e27f1539/notes/list?view=notes&amp;sort=date_desc" DesignTimeRectangle="918, 982, 1174, 34" DesignTimeScaleFactor="2" ElementType="Text" FriendlyName="'Jan 31, 2024'" FullSelectorArgument="&lt;webctrl tag='DIV' idx='1' /&gt;&lt;webctrl parentid='__contentBody' tag='P' innertext='*' visibleinnertext='*' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='__contentBody' tag='P' type='' class='' aaname='   ' /&gt;" Guid="1675d7c4-002b-4409-873f-c756b810472e" InformativeScreenshot="cd2c1d2a7d86690c43a8084a1ec400f9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*Practice Better' /&gt;" SearchSteps="Selector" Version="V2" WaitForReadyArgument="Complete">
                         <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                             <uix:Target DesignTimeRectangle="918, 941, 1174, 37" ElementType="Text" FriendlyName="'Medication order'" FullSelectorArgument="&lt;webctrl parentid='__contentBody' tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='__contentBody' tag='H2' type='' class='flex' aaname='Medication order ' check:innerText='Medication order' /&gt;" SearchSteps="FuzzySelector" />
                           </scg:List>
                         </uix:TargetAnchorable.Anchors>
@@ -173,12 +173,12 @@
                   </uix:NClick>
                   <uix:NGetText DisplayName="Medication Details" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="7508b238-e2f3-49b7-ae7e-4dd4ec7be6c7" TextString="[MedicationDetails]" Version="V3">
                     <uix:NGetText.Target>
-                      <uix:TargetAnchorable BrowserURL="https://my.practicebetter.io/#/p/clients/653a50c6894e970bd2f5f3a2/notes/653c0891001d76df1bef2e3f/edit" CvElementArea="767, 1403, 1536, 361" CvTextArea="833, 1795, 374, 30" CvType="InputBox" DesignTimeRectangle="770, 1411, 1524, 2168" DesignTimeScaleFactor="2" FriendlyName="'HPI:Adam Welch'" FullSelectorArgument="&lt;html app='chrome.exe' title='*Practice Better' /&gt;&lt;webctrl tag='DIV' innertext='Medication*' visibleinnertext='Medication:*' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='fr-element fr-view fr-disabled' parentid='section_0' tag='DIV' aaname='' /&gt;" Guid="7e71e9a9-7eac-4e40-a627-7fb733037f6b" InformativeScreenshot="3b43a783cacc7b5eb7f6912b4affb359.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Edit Notes - Practice Better' /&gt;" SearchSteps="Selector" Version="V2" WaitForReadyArgument="Complete" />
+                      <uix:TargetAnchorable BrowserURL="https://my.practicebetter.io/#/p/clients/653a50c6894e970bd2f5f3a2/notes/653c0891001d76df1bef2e3f/edit" CvElementArea="767, 1403, 1536, 361" CvTextArea="833, 1795, 374, 30" CvType="InputBox" DesignTimeRectangle="770, 1411, 1524, 2168" DesignTimeScaleFactor="2" FriendlyName="'HPI:Adam Welch'" FullSelectorArgument="&lt;html app='chrome.exe' title='*Practice Better' /&gt;&lt;webctrl parentid='section_0' tag='DIV' innertext='*' visibleinnertext='*' class='fr-element fr-view' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='fr-element fr-view fr-disabled' parentid='section_0' tag='DIV' aaname='' /&gt;" Guid="7e71e9a9-7eac-4e40-a627-7fb733037f6b" InformativeScreenshot="3b43a783cacc7b5eb7f6912b4affb359.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Edit Notes - Practice Better' /&gt;" SearchSteps="Selector" Version="V2" WaitForReadyArgument="Complete" />
                     </uix:NGetText.Target>
                   </uix:NGetText>
                   <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Back" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7508b238-e2f3-49b7-ae7e-4dd4ec7be6c7" Version="V3">
                     <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="https://my.practicebetter.io/#/p/clients/653a50c6894e970bd2f5f3a2/notes/653c0891001d76df1bef2e3f/edit" DesignTimeRectangle="656, 415, 48, 48" DesignTimeScaleFactor="2" FriendlyName="'MD-ICON'" FullSelectorArgument="&lt;webctrl parentid='appNavBar' tag='A' aria-label='Logo (Home)' /&gt;&lt;webctrl id='logo' tag='MD-ICON' class='logo logo-default' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='app:arrow-back' aria-role='img' parentid='titlebar' tag='MD-ICON' type='' class='' aaname='' /&gt;" Guid="b7e256ed-4101-4607-8199-6b61df2292ed" InformativeScreenshot="528733a476ecb1de136943b65031816b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Edit Notes - Practice Better' /&gt;" SearchSteps="Selector" Version="V2" WaitForReadyArgument="Complete" />
+                      <uix:TargetAnchorable BrowserURL="https://my.practicebetter.io/#/p/clients/653a50c6894e970bd2f5f3a2/notes/653c0891001d76df1bef2e3f/edit" DesignTimeRectangle="656, 415, 48, 48" DesignTimeScaleFactor="2" FriendlyName="'MD-ICON'" FullSelectorArgument="&lt;html app='chrome.exe' title='*Practice Better' /&gt;&lt;webctrl aria-label='app:arrow-back' aria-role='img' parentid='titlebar' tag='MD-ICON' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='app:arrow-back' aria-role='img' parentid='titlebar' tag='MD-ICON' type='' class='' aaname='' /&gt;" Guid="b7e256ed-4101-4607-8199-6b61df2292ed" InformativeScreenshot="528733a476ecb1de136943b65031816b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Edit Notes - Practice Better' /&gt;" SearchSteps="Selector" Version="V2" WaitForReadyArgument="Complete" />
                     </uix:NClick.Target>
                   </uix:NClick>
                 </Sequence>

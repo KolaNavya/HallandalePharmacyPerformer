@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>875,867</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1327,867</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -278,10 +278,18 @@
                       </Assign>
                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Process workflow" sap:VirtualizedContainerService.HintSize="438,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" UnSafe="False" WorkflowFileName="Framework\Process.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">[TransactionItem]</InArgument>
-                          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
-                          <OutArgument x:TypeArguments="x:String" x:Key="MedicationDetails">[MedicationDetails]</OutArgument>
-                          <OutArgument x:TypeArguments="x:String" x:Key="OrderDate">[OrderDate]</OutArgument>
+                          <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">
+                            <VisualBasicValue x:TypeArguments="ui:QueueItem" ExpressionText="TransactionItem" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                            <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Config" />
+                          </InArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="MedicationDetails">
+                            <VisualBasicReference x:TypeArguments="x:String" ExpressionText="MedicationDetails" />
+                          </OutArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="OrderDate">
+                            <VisualBasicReference x:TypeArguments="x:String" ExpressionText="OrderDate" />
+                          </OutArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                       <TryCatch DisplayName="Try Catch Set Transaction Status (Success)" sap:VirtualizedContainerService.HintSize="438,347" sap2010:WorkflowViewState.IdRef="TryCatch_10">
