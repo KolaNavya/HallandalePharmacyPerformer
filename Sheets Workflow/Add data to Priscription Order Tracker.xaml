@@ -11,18 +11,18 @@
     <x:Property Name="LastName" Type="InArgument(x:String)" />
     <x:Property Name="DOB" Type="InArgument(x:String)" />
     <x:Property Name="Gender" Type="InArgument(x:String)" />
-    <x:Property Name="OrdersDatadt" Type="InOutArgument(sd:DataTable)" />
     <x:Property Name="EmailAddress" Type="InArgument(x:String)" />
     <x:Property Name="Address" Type="InArgument(x:String)" />
     <x:Property Name="City" Type="InArgument(x:String)" />
     <x:Property Name="State" Type="InArgument(x:String)" />
     <x:Property Name="Zip" Type="InArgument(x:String)" />
     <x:Property Name="Phone" Type="InArgument(x:String)" />
+    <x:Property Name="OrdersDatadt" Type="OutArgument(sd:DataTable)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1515,2430</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>875,2430</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Add_data_to_Priscription_Order_Tracker_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
