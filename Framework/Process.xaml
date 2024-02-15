@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>875,1092.5</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1515,1092.5</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -122,18 +122,10 @@
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PracticeBetter Workflows\Get Notes.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="450,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="PracticeBetter Workflows\Get Notes.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:Int32" x:Key="WaitL">
-          <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="Convert.ToInt32( in_Config(&quot;WaitL&quot;).ToString)" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="WaitS">
-          <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="Convert.ToInt32( in_Config(&quot;WaitS&quot;).ToString)" />
-        </InArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="MedicationDetails">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="MedicationDetails" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="OrderDate">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="OrderDate" />
-        </OutArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="WaitL">[Convert.ToInt32( in_Config("WaitL").ToString)]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="WaitS">[Convert.ToInt32( in_Config("WaitS").ToString)]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="MedicationDetails">[MedicationDetails]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="OrderDate">[OrderDate]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sheets Workflow\Add data to Priscription Order Tracker.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="450,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Sheets Workflow\Add data to Priscription Order Tracker.xaml">
